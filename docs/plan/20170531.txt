@@ -1,0 +1,25 @@
+Crucial Jobs
+-Writing the class
+-Brick Spawning
+-Interactions between all the classes
+-Angling of ball on wall
+-Losing and Winning
+-Score Tracker
+
+Core Functionality
+-Ball class
+-Brick class
+-Platform Class
+
+Non-Essentials
+-Queue Powerups
+-Queue level 
+-Difficulty / more health on bricks using stacks
+-Adjusting speed of level
+-Start Screen, end screen with score
+
+Timeline
+Sunday -- Finish all core functioanlity
+Wednsday -- Finish all non-essentials
+Thursday -- Debug
+
