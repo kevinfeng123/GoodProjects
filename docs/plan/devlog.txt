@@ -1,20 +1,10 @@
-<Team Name (without word "team")>
-<Member Bubbles>
-<Member Buttercup>
-<Member Blossom>
-pd <pd#>
+GoodProjects
+Kevin Feng
+Kenny Lin
+pd 01
 ---------------------
-<Project>
-
-
-
+Brick Breaker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete these instructions once all teammates understand usage.
-  (from tilde bar above to tilde bar below)
-
 devlog--
 Use keyboard shortcut to jump to end,
  replicate entry template,
@@ -75,4 +65,8 @@ yyyy-mm-dd
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
+==============================================================
+2018-06-04
+--------------------------------------------------------------
+Kevin Feng :: Created basic structure for class ball, main, platform, and bricks. Wrote pseudocode for the essential functions required.
 ==============================================================
