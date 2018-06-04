@@ -1,6 +1,6 @@
 Crucial Jobs
 -Writing the class
--Brick Spawning
+-Brick Spawning, Ball spawning, Platform spawning
 -Interactions between all the classes
 -Angling of ball on wall
 -Losing and Winning
@@ -10,12 +10,13 @@ Core Functionality
 -Ball class
 -Brick class
 -Platform Class
+-Run Class
 
 Non-Essentials
--Queue Powerups
+-Queue Powerups -- multiple balls at once, slowing down the ball, changing ball size, other random stuff
 -Queue level 
--Difficulty / more health on bricks using stacks
--Adjusting speed of level
+-Difficulty / more health on bricks using stacks/ varying velocity on ball
+-Health on bricks
 -Start Screen, end screen with score
 
 Timeline
