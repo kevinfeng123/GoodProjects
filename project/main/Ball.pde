@@ -26,5 +26,6 @@ class Ball{
     yPos += ySpeed;
     ellipse(xPos, yPos, rad, rad);
     
+    //when making contact with the platform, vary the angle and speed based on platform velocity and positioning
   }
 }

@@ -25,6 +25,7 @@ void draw(){
   createBricks();
   paddle[0].movePlatform();
   playBall[0].move();
+  //Display score at the top with an accessor to Bricks
 }
 
 
