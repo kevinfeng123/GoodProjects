@@ -7,6 +7,7 @@ void setup() {
   size(840, 800);
   playBall[0] = new Ball();
   paddle[0] = new Platform(300, 780, 200, 10);
+  createBricks();
 
 }
 
@@ -22,7 +23,12 @@ void createBricks(){
 
 void draw(){
   background(0);
-  createBricks();
+  for (Bricks b : brickArray){
+    b.createBrick();
+    if (ball.distance(b) <= 40 ){
+      ifHit();
+    }
+  }
   paddle[0].movePlatform();
   playBall[0].move();
   //Display score at the top with an accessor to Bricks
