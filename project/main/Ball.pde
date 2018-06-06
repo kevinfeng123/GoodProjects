@@ -29,5 +29,9 @@ class Ball{
     //when making contact with the platform, vary the angle and speed based on platform velocity and positioning
   }
   
+ 
+ 
+  
+  
   
 }

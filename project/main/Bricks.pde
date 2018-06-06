@@ -1,15 +1,15 @@
 class Bricks{
-int hp = 0;
+int hp = 1;
 float r = 0;
 float g = 0;
 float b = 0;
-float cornerx; //right x value 
-float corner2x; //left x vaue
-float cornery; //top y value
-float corner2y; //bottom y value
+float rightX; //right x value 
+float leftX; //left x vaue
+float topY; //top y value
+float bottomY; //bottom y value
 
 int xPos, yPos, widt, hite;
-boolean alive = true;
+//boolean alive = true;
 int score = 0;
 
 
@@ -25,38 +25,28 @@ int score = 0;
      hp = 1;
   }
   
+  //int getX(){
+    //return xPos;
+  //}
   void createBrick(){
     if (hp > 0){
     
     rect(xPos, yPos, widt, hite);
-    cornerx = xPos + widt;
-    corner2x = xPos - widt;
-    cornery = yPos + hite;
-    corner2y = yPos - hite;
+    rightX = xPos + widt;
+    leftX = xPos - widt;
+    topY = yPos + hite;
+    bottomY = yPos - hite;
     }
   }
   
-  void ballOn(){
-    
-  }
-  void  ifHit(){
-    if (hp < 1){
-      fill(0); 
-      rect(xPos, yPos, widt, hite);
-      fill(255); 
-    }
-    if (hp >= 1){
-      if (dist()){
-         between block and ball is 0
-        }{
-        hp -= 1;
-        }
-    }else{
-      fill(0, 0, 0);
-    }
-   if (ball hits brick){
-    hp -= 1;
-    score += 1;
+  //void setHP(int val){
+    //hp = val;
+ // }
+  void die(){
+    hp = 0;
     }
   }
-}
+  //void  ballContact(){
+   
+    //}
+  
