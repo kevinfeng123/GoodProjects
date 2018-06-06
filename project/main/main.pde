@@ -5,6 +5,7 @@ powerUpBig[] biglist = new powerUpBig[5];
 int lives = 3;
 int score = 0;
 boolean spawn = false;
+boolean gameStart = false;
 
 void setup() {
   size(840, 800);
@@ -14,7 +15,17 @@ void setup() {
   biglist[0] = new powerUpBig();
 
 }
+void mouseClicked(){
+  gameStart = true;
+}
 
+void gameOver(){
+  if (lives <= 0){
+    background(0);
+    textSize(100);
+    text("GAME OVER", 100, 400);
+  }
+}
 void createBricks(){
   int x = 0;
   for (int i = 50; i < 760; i += 70) {
@@ -32,21 +43,25 @@ void contactBrick(){
         //  if (playBall[0].xpos > 0)
             b.die();
             playBall[0].ySpeed *= -1;
+            score += 1;
         }
         if (playBall[0].xPos - 10 < b.rightX && b.leftX < playBall[0].xPos - 10 && playBall[0].yPos - 10 == b.topY){ //top side of brick
         //  if (playBall[0].xpos > 0)
              b.die();
             playBall[0].ySpeed *= -1;
+            score += 1;
         }
         if (b.leftX == playBall[0].xPos - 10 && playBall[0].yPos - 10 > b.bottomY && playBall[0].yPos - 10 < b.topY){ //left side of brick
         //  if (playBall[0].xpos > 0)
             playBall[0].xSpeed *= -1;
              b.die();
+             score += 1;
         }
         if (b.rightX == playBall[0].xPos - 10 && playBall[0].yPos - 10 > b.bottomY && playBall[0].yPos - 10 < b.topY){ //right side of brick
         //  if (playBall[0].xpos > 0)
             playBall[0].xSpeed *= -1;
              b.die();
+             score += 1;
         }
       }
   }
@@ -74,9 +89,14 @@ void contactPlatform(){
 }
   
 void draw(){
-    if (lives > 0){
+    if (!gameStart){
+      textSize(100);
+      text("Click to Start", 100, 400);
+    }
+    if (lives > 0 && gameStart){
       background(0);
-      
+      text("score: ", 10, 10);
+      text(score, 50, 10);
       for (Bricks b : brickArray){
         b.createBrick();
         
@@ -96,7 +116,11 @@ void draw(){
       }
       contactBrick();
       contactPlatform();
+      if (playBall[0].yPos > 1500){
+        lives -= 1;
+      }
       playBall[0].respawn();
+      gameOver();
       //Display score at the top with an accessor to Bricks
     }
 }
