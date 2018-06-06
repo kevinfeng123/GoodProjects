@@ -7,7 +7,7 @@ class Ball{
   
   Ball(){
     xPos = 400;
-    yPos = 770;
+    yPos = 670;
     ellipse(xPos, yPos, rad, rad);
   }
   
@@ -19,7 +19,7 @@ class Ball{
     if (xPos <= 0 || xPos >= 840){
     xSpeed *= -1;
     }  
-    if (yPos <= 0 || yPos >= 800){
+    if (yPos <= 0){
     ySpeed *= -1;
     }
     xPos += xSpeed;
@@ -27,6 +27,14 @@ class Ball{
     ellipse(xPos, yPos, rad, rad);
     
     //when making contact with the platform, vary the angle and speed based on platform velocity and positioning
+  }
+  
+  void respawn(){
+    if (yPos > 1500){ //respawn delay
+      ellipse(400, 670, rad, rad);
+      yPos = 670;
+      xPos = 400;
+    }
   }
   
  

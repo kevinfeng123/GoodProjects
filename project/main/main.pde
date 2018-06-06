@@ -25,31 +25,52 @@ void createBricks(){
   }
 }
 
-void contact(){
+void contactBrick(){
   for (Bricks b : brickArray){
       if (b.hp > 0){
-        if (playBall[0].xPos + 20 < b.rightX && b.leftX < playBall[0].xPos + 20 && playBall[0].yPos + 20 == b.bottomY){ //bottom side of brick
+        if (playBall[0].xPos - 10 < b.rightX && b.leftX < playBall[0].xPos - 10 && playBall[0].yPos - 10 == b.bottomY){ //bottom side of brick
         //  if (playBall[0].xpos > 0)
             b.die();
             playBall[0].ySpeed *= -1;
         }
-        if (playBall[0].xPos + 20 < b.rightX && b.leftX < playBall[0].xPos + 20 && playBall[0].yPos + 20 == b.topY){ //top side of brick
+        if (playBall[0].xPos - 10 < b.rightX && b.leftX < playBall[0].xPos - 10 && playBall[0].yPos - 10 == b.topY){ //top side of brick
         //  if (playBall[0].xpos > 0)
              b.die();
             playBall[0].ySpeed *= -1;
         }
-        if (b.leftX == playBall[0].xPos + 20 && playBall[0].yPos + 20 > b.bottomY && playBall[0].yPos  + 20 < b.topY){ //left side of brick
+        if (b.leftX == playBall[0].xPos - 10 && playBall[0].yPos - 10 > b.bottomY && playBall[0].yPos - 10 < b.topY){ //left side of brick
         //  if (playBall[0].xpos > 0)
             playBall[0].xSpeed *= -1;
              b.die();
         }
-        if (b.rightX == playBall[0].xPos + 20 && playBall[0].yPos + 20 > b.bottomY && playBall[0].yPos + 20 < b.topY){ //right side of brick
+        if (b.rightX == playBall[0].xPos - 10 && playBall[0].yPos - 10 > b.bottomY && playBall[0].yPos - 10 < b.topY){ //right side of brick
         //  if (playBall[0].xpos > 0)
             playBall[0].xSpeed *= -1;
              b.die();
         }
       }
   }
+
+}
+
+void contactPlatform(){
+ // if (playBall[0].xPos + 20 < paddle[0].rightX && paddle[0].leftX < playBall[0].xPos + 20 && playBall[0].yPos + 20 == paddle[0].bottomY){ //bottom side of brick
+
+   //         playBall[0].ySpeed *= -1;
+     //   }
+        if (playBall[0].xPos < paddle[0].rightX && paddle[0].leftX < playBall[0].xPos + 20 && playBall[0].yPos + 10 == paddle[0].topY){ //top side of brick
+
+            playBall[0].ySpeed *= -1;
+        }
+     //   if (paddle[0].leftX == playBall[0].xPos - 10 && playBall[0].yPos - 10 > paddle[0].bottomY && playBall[0].yPos - 10 < paddle[0].topY){ //left side of brick
+
+       //     playBall[0].xSpeed *= -1;
+            
+        //}
+        //if (paddle[0].rightX == playBall[0].xPos - 10 && playBall[0].yPos - 10 > paddle[0].bottomY && playBall[0].yPos - 10 < paddle[0].topY){ //right side of brick
+ 
+          //  playBall[0].xSpeed *= -1;
+       // }
 }
   
 void draw(){
@@ -65,6 +86,7 @@ void draw(){
       }
       //brickArray[2].setHP(0); testing hp
       paddle[0].movePlatform();
+      
       playBall[0].move();
       if (int(random(1000)) == 1){ //powerUp spawn rate
         spawn = true;
@@ -72,12 +94,9 @@ void draw(){
       if (spawn){
         biglist[0].spawnPowerup();
       }
-      contact();
+      contactBrick();
+      contactPlatform();
+      playBall[0].respawn();
       //Display score at the top with an accessor to Bricks
     }
 }
-
-
- //if (brickArray[i].hp <= 0){  REMOVE BRICKS WHEN HEALTH IS 0
-//  brickArray.remove(i);
-//}

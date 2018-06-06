@@ -6,7 +6,11 @@ class Platform {
   float r;
   float g;
   float b;
-  
+  float rightX; //right x value 
+  float leftX; //left x vaue
+  float topY; //top y value
+  float bottomY; //bottom y value
+ 
   Platform(){
     
     rect(300, 780, 200, 10);
@@ -19,10 +23,20 @@ class Platform {
     g = 100;
     b = 100;
     rect(x,y,w,h);
+    x = mouseX;
+    rightX = x + with;
+    leftX = x - with;
+    topY = y + hite;
+    bottomY = y - hite;
   }
   
   void movePlatform(){
     rect(mouseX, y, 200, 10); 
+    x = mouseX;
+    rightX = x + w;
+    leftX = x;
+    topY = y + h;
+    bottomY = y - h;
   }
   
 
