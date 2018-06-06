@@ -70,3 +70,11 @@ yyyy-mm-dd
 --------------------------------------------------------------
 Kevin Feng :: Created basic structure for class ball, main, platform, and bricks. Wrote pseudocode for the essential functions required.
 ==============================================================
+2018-06-05
+--------------------------------------------------------------
+Kevin Feng :: Finished hit detection, still could be improved.
+==============================================================
+2018-06-06
+--------------------------------------------------------------
+Kevin Feng :: Improved hit detection and wrote a finished basic brick breaker. Added scoring.
+==============================================================
