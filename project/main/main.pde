@@ -2,10 +2,15 @@ Bricks[] brickArray = new Bricks[55];
 Platform[] paddle = new Platform[1];
 Ball[] playBall = new Ball[3]; // can hold multiple balls for powerups
 powerUpBig[] biglist = new powerUpBig[5];
+import java.util.*;
+import java.io.*;
+ArrayDeque<Integer> scores = new ArrayDeque<Integer>();
 int lives = 3;
 int score = 0;
 boolean spawn = false;
 boolean gameStart = false;
+
+
 
 void setup() {
   size(840, 800);
@@ -13,7 +18,23 @@ void setup() {
   paddle[0] = new Platform(300, 780, 200, 10);
   createBricks();
   biglist[0] = new powerUpBig();
-
+  try{
+  Scanner scanner = new Scanner(new File(dataPath("scores.csv")));
+  while(scanner.hasNext()){
+    scores.addLast(Integer.valueOf(scanner.next()));
+  }
+  String str = "";
+  for (Integer i : scores){
+    str += i + " ";
+  }
+  System.out.println("start : [" + str + "]");
+  
+  }
+  catch (Exception e){
+     System.out.println("Working Directory = " +
+              System.getProperty("user.dir"));
+    printStackTrace(e);
+  }
 }
 void mouseClicked(){
   gameStart = true;
@@ -24,6 +45,29 @@ void gameOver(){
     background(0);
     textSize(100);
     text("GAME OVER", 100, 400);
+    scores.removeLast();
+    scores.addFirst(score);
+      String str = "";
+  
+    try {
+       str = "";
+       while (scores.size() > 0){
+          str += scores.removeFirst() + " "; 
+       }
+      str = str.substring(0,str.length()-1);
+      BufferedWriter out  = new BufferedWriter(new FileWriter(dataPath("scores.csv")));
+      out.write(str);
+      out.close();
+  
+      
+      Scanner scanner = new Scanner(new File(dataPath("scores.csv")));
+  while(scanner.hasNextLine()){
+    System.out.println(scanner.nextLine());
+  }
+    }
+    catch (Exception e){
+      printStackTrace(e);
+    }
   }
 }
 void createBricks(){
@@ -38,7 +82,7 @@ void createBricks(){
 
 void contactBrick(){
   for (Bricks b : brickArray){
-      if (b.hp > 0){
+      if (b.hp.size() > 0){
         if (playBall[0].xPos - 10 < b.rightX && b.leftX < playBall[0].xPos - 10 && playBall[0].yPos - 10 == b.bottomY){ //bottom side of brick
         //  if (playBall[0].xpos > 0)
             b.die();
@@ -95,8 +139,15 @@ void draw(){
     }
     if (lives > 0 && gameStart){
       background(0);
-      text("score: ", 10, 10);
-      text(score, 50, 10);
+      textSize(30);
+      text("score: ", 20, 35);
+      text(score, 150, 35);
+      text("avg score: ", 20, 70);
+      int sum = 0;
+      for (Integer i : scores){
+        sum += i;
+      }
+      text(sum / 5., 190, 70);
       for (Bricks b : brickArray){
         b.createBrick();
         

@@ -1,5 +1,6 @@
+import java.util.*;
 class Bricks{
-int hp = 1;
+Stack<Integer> hp;
 float r = 0;
 float g = 0;
 float b = 0;
@@ -14,7 +15,7 @@ int score = 0;
 
 
   Bricks(){
-    hp = 1;
+    hp.push(1);
   }
   Bricks(int x,int y,int w,int h){
      rect(x,y,w,h);
@@ -22,14 +23,15 @@ int score = 0;
      yPos = y;
      widt = w;
      hite = h;
-     hp = 1;
+     hp = new Stack<Integer>();
+     hp.push(1);
   }
   
   //int getX(){
     //return xPos;
   //}
   void createBrick(){
-    if (hp > 0){
+    if (hp.size() > 0){
     
     rect(xPos, yPos, widt, hite);
     rightX = xPos + widt;
@@ -43,10 +45,11 @@ int score = 0;
     //hp = val;
  // }
   void die(){
-    hp = 0;
+    while (hp.size() > 0){
+      hp.pop();
     }
   }
   //void  ballContact(){
    
     //}
-  
+}
