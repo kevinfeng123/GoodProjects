@@ -10,7 +10,7 @@ float topY; //top y value
 float bottomY; //bottom y value
 
 int xPos, yPos, widt, hite;
-//boolean alive = true;
+boolean alive = true;
 int score = 0;
 
 

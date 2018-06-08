@@ -13,9 +13,9 @@
 Bricks[] brickArray = new Bricks[55];
 Platform[] paddle = new Platform[1];
 Ball[] playBall = new Ball[3]; // can hold multiple balls for powerups
-//powerUpBig[] bigPower = new powerUpBig[1];
-//powerUpBig[] manyPower = new powerUpMany[1];
-//powerUpBig[] slowPower = new powerUpSlow[1];
+powerUpBig[] bigPower = new powerUpBig[1];
+powerUpMany[] manyPower = new powerUpMany[1];
+powerUpSlow[] slowPower = new powerUpSlow[1];
 import java.util.*;
 import java.io.*;
 ArrayDeque<Integer> scores = new ArrayDeque<Integer>();
@@ -26,6 +26,7 @@ boolean gameStart = false;
 
 void setup() {
   size(840, 800);
+  background(0);
   playBall[0] = new Ball();
   paddle[0] = new Platform(300, 780, 200, 10);
   createBricks();
@@ -60,7 +61,6 @@ void gameOver(){
     scores.removeLast();
     scores.addFirst(score);
       String str = "";
-  
     try {
        str = "";
        while (scores.size() > 0){
@@ -80,7 +80,6 @@ void gameOver(){
       printStackTrace(e);
     }
   }
-  mouseClicked()
 }
 void youWin(){
   if (score >= 55){
@@ -90,7 +89,6 @@ void youWin(){
     scores.removeLast();
     scores.addFirst(score);
       String str = "";
-  
     try {
        str = "";
        while (scores.size() > 0){
@@ -110,7 +108,6 @@ void youWin(){
     catch (Exception e){
       printStackTrace(e);
     }
-    mouseClicked()
   }
 }
 void createBricks(){
@@ -127,25 +124,25 @@ void contactBrick(){
   for (Bricks b : brickArray){
       if (b.hp.size() > 0){
         if (playBall[0].xPos - 10 < b.rightX && b.leftX < playBall[0].xPos - 10 && playBall[0].yPos - 10 == b.bottomY){ //bottom side of brick
-        //  if (playBall[0].xpos > 0)
+          if (playBall[0].xPos > 0)
             b.die();
             playBall[0].ySpeed *= -1;
             score += 1;
         }
         if (playBall[0].xPos - 10 < b.rightX && b.leftX < playBall[0].xPos - 10 && playBall[0].yPos - 10 == b.topY){ //top side of brick
-        //  if (playBall[0].xpos > 0)
+          if (playBall[0].xPos > 0)
              b.die();
             playBall[0].ySpeed *= -1;
             score += 1;
         }
         if (b.leftX == playBall[0].xPos - 10 && playBall[0].yPos - 10 > b.bottomY && playBall[0].yPos - 10 < b.topY){ //left side of brick
-        //  if (playBall[0].xpos > 0)
+          if (playBall[0].xPos > 0)
             playBall[0].xSpeed *= -1;
              b.die();
              score += 1;
         }
         if (b.rightX == playBall[0].xPos - 10 && playBall[0].yPos - 10 > b.bottomY && playBall[0].yPos - 10 < b.topY){ //right side of brick
-        //  if (playBall[0].xpos > 0)
+          if (playBall[0].xPos > 0)
             playBall[0].xSpeed *= -1;
              b.die();
              score += 1;
@@ -179,6 +176,7 @@ void draw(){
     if (!gameStart){
       textSize(100);
       text("Click to Start", 100, 400);
+      text("BRICK BREAKER",60, 200);
     }
     if (lives > 0 && gameStart){
       background(0);
