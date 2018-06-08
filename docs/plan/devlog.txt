@@ -73,7 +73,7 @@ Kenny Lin :: Created initial proposal, readme, and flowchart.
 2018-06-04
 --------------------------------------------------------------
 Kevin Feng :: Created basic structure for class ball, main, platform, and bricks. Wrote pseudocode for the essential functions required.
-Kenny Lin :: Collaborated with basic structure 
+Kenny Lin :: Collaborated with creating basic structure 
 ==============================================================
 2018-06-05
 --------------------------------------------------------------
