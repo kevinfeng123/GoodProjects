@@ -13,9 +13,9 @@
 Bricks[] brickArray = new Bricks[55];
 Platform[] paddle = new Platform[1];
 Ball[] playBall = new Ball[3]; // can hold multiple balls for powerups
-powerUpBig[] bigPower = new powerUpBig[1];
-powerUpBig[] manyPower = new powerUpMany[1];
-powerUpBig[] slowPower = new powerUpSlow[1];
+//powerUpBig[] bigPower = new powerUpBig[1];
+//powerUpBig[] manyPower = new powerUpMany[1];
+//powerUpBig[] slowPower = new powerUpSlow[1];
 import java.util.*;
 import java.io.*;
 ArrayDeque<Integer> scores = new ArrayDeque<Integer>();
@@ -29,7 +29,7 @@ void setup() {
   playBall[0] = new Ball();
   paddle[0] = new Platform(300, 780, 200, 10);
   createBricks();
-  biglist[0] = new powerUpBig();
+  //biglist[0] = new powerUpBig();
   try{
   Scanner scanner = new Scanner(new File(dataPath("scores.csv")));
   while(scanner.hasNext()){
@@ -80,6 +80,7 @@ void gameOver(){
       printStackTrace(e);
     }
   }
+  mouseClicked()
 }
 void youWin(){
   if (score >= 55){
@@ -109,6 +110,7 @@ void youWin(){
     catch (Exception e){
       printStackTrace(e);
     }
+    mouseClicked()
   }
 }
 void createBricks(){
@@ -206,7 +208,7 @@ void draw(){
         spawn = true;
       }
       if (spawn){
-        bigPower[0].spawnPowerup();
+        //bigPower[0].spawnPowerup();
       }
       contactBrick();
       contactPlatform();
