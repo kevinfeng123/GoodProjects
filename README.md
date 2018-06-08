@@ -16,9 +16,9 @@ The player has to move the paddle tp hit the blocks, break them. The ball stays 
 - Different balls to shoot
 
 ## Launch Instructions:
-1 Clone our repo.  
-2. Open GoodProjects/project/main/main.pde  
-3. Press the run icon to start the game  
+ 1 Clone our repo.  
+ 2. Open GoodProjects/project/main/main.pde  
+ 3. Press the run icon to start the game  
 
 ## How To Play:
  1. Click anywhere to start the game  
