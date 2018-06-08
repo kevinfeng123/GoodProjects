@@ -16,9 +16,15 @@ The player has to choose an angle to shoot the ball in a certain direction to ms
 - Different balls to shoot
 
 ## Launch Instructions:
-1. Clone our repo.
+1 Clone our repo.
 2. Open GoodProjects/project/main/main.pde
-3. Press the play icon to start the game
-4. The level will be generated automatically and the user can start by clickingon the initial angle they want the ball to be shot at.
+3. Press the run icon to start the game
+
+## How To Play:
+ 1. Click anywhere to start the game
+ 2. Move the paddle left and right with your mouse to hit the ball 
+ 3. If the ball falls to the bottom, you lose a life and a new ball will be automatically generated
+ 4. Win by destroying all bricks
+ 
 
 
