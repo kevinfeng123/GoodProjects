@@ -9,6 +9,6 @@ class powerUpBig{
       
   }
   void spawnPowerup(){
-    ellipse(xPos,yPos,10,10);  
+    ellipse(xPos,yPos,100,100);  
   }
 }

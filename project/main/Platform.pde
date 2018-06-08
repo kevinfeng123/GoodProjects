@@ -1,5 +1,5 @@
 class Platform {
-  float x = 300;
+  float x = 300; 
   float y = 780;
   float h;
   float w;
@@ -13,7 +13,8 @@ class Platform {
  
   Platform(){
     
-    rect(300, 780, 200, 10);
+    //rect(300, 780, 200, 10); 
+    rect(300, 780, 1000, 10); 
   }
   
   Platform(float x, float y, float with, float hite){ //set height and width
