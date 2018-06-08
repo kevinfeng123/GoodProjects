@@ -9,6 +9,11 @@ class powerUpMany{
       
   }
   void spawnPowerup(){
-    ellipse(xPos,yPos,100,100);  
+    stroke(255); //white border
+    fill(0, 255, 0); //bright green
+    ellipse(xPos,yPos,50,50);  
+  }
+    void move(){
+      yPos += 10;
   }
 }

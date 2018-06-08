@@ -1,15 +1,6 @@
 //Welcome to Brick Breaker!
 //Team GoodProjects
 
-//INSTRUCTIONS
-
-//Press the run button
-//Click anywhere to start the game 
-//Move the paddle left and right with your mouse to hit the ball 
-//If the ball falls to the bottom, you lose a life and a new ball will be automatically generated 
-//Win by destroying all bricks 
-
-
 Bricks[] brickArray = new Bricks[55];
 Platform[] paddle = new Platform[1];
 Ball[] playBall = new Ball[3]; // can hold multiple balls for powerups
@@ -86,28 +77,6 @@ void youWin(){
     background(0);
     textSize(100);
     text("YOU WIN", 200, 400);
-    scores.removeLast();
-    scores.addFirst(score);
-      String str = "";
-    try {
-       str = "";
-       while (scores.size() > 0){
-          str += scores.removeFirst() + " "; 
-       }
-      str = str.substring(0,str.length()-1);
-      BufferedWriter out  = new BufferedWriter(new FileWriter(dataPath("scores.csv")));
-      out.write(str);
-      out.close();
-  
-      
-      Scanner scanner = new Scanner(new File(dataPath("scores.csv")));
-  while(scanner.hasNextLine()){
-    System.out.println(scanner.nextLine());
-  }
-    }
-    catch (Exception e){
-      printStackTrace(e);
-    }
   }
 }
 void createBricks(){

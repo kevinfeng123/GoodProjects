@@ -9,6 +9,11 @@ class powerUpSlow{
       
   }
   void spawnPowerup(){
-    ellipse(xPos,yPos,100,100);  
+    stroke(0); //black border
+    fill(0,0, 255); //bright blue
+    ellipse(xPos,yPos,50,50);  
+  }
+    void move(){
+      yPos += 10;
   }
 }
