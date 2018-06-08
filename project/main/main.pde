@@ -5,7 +5,7 @@ powerUpBig[] biglist = new powerUpBig[5];
 import java.util.*;
 import java.io.*;
 ArrayDeque<Integer> scores = new ArrayDeque<Integer>();
-int lives = 3;
+int lives = 100;
 int score = 0;
 boolean spawn = false;
 boolean gameStart = false;
@@ -45,6 +45,35 @@ void gameOver(){
     background(0);
     textSize(100);
     text("GAME OVER", 100, 400);
+    scores.removeLast();
+    scores.addFirst(score);
+      String str = "";
+  
+    try {
+       str = "";
+       while (scores.size() > 0){
+          str += scores.removeFirst() + " "; 
+       }
+      str = str.substring(0,str.length()-1);
+      BufferedWriter out  = new BufferedWriter(new FileWriter(dataPath("scores.csv")));
+      out.write(str);
+      out.close();
+
+      Scanner scanner = new Scanner(new File(dataPath("scores.csv")));
+  while(scanner.hasNextLine()){
+    System.out.println(scanner.nextLine());
+  }
+    }
+    catch (Exception e){
+      printStackTrace(e);
+    }
+  }
+}
+void youWin(){
+  if (score >= 55){
+    background(0);
+    textSize(100);
+    text("YOU WIN", 200, 400);
     scores.removeLast();
     scores.addFirst(score);
       String str = "";
@@ -173,6 +202,7 @@ void draw(){
         lives -= 1;
       }
       playBall[0].respawn();
+      youWin();
       gameOver();
       //Display score at the top with an accessor to Bricks
     }
