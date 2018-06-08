@@ -1,9 +1,9 @@
 import java.util.*;
 class Bricks{
 Stack<Integer> hp;
-float r = 0;
-float g = 0;
-float b = 0;
+float r; // red color value 
+float g; // green color value 
+float b; // blue color value
 float rightX; //right x value 
 float leftX; //left x vaue
 float topY; //top y value
@@ -16,6 +16,9 @@ int score = 0;
 
   Bricks(){
     hp.push(1);
+    r = random(128, 255);
+    g = random(128, 255);
+    b = random(128, 255);
   }
   Bricks(int x,int y,int w,int h){
      rect(x,y,w,h);
@@ -34,6 +37,7 @@ int score = 0;
     if (hp.size() > 0){
     
     rect(xPos, yPos, widt, hite);
+    fill(r, g, b);
     rightX = xPos + widt;
     leftX = xPos - widt;
     topY = yPos + hite;
