@@ -1,3 +1,4 @@
+
 class Platform {
   float x = 300; 
   float y = 780;

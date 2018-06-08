@@ -11,7 +11,7 @@ float bottomY; //bottom y value
 
 int xPos, yPos, widt, hite;
 boolean alive = true;
-int score = 0;
+
 
 
   Bricks(){
@@ -54,7 +54,7 @@ int score = 0;
     //hp = val;
  // }
   void die(){
-    while (hp.size() > 0){
+    if (hp.size() > 0){
       hp.pop();
     }
   }

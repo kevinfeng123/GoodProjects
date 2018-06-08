@@ -5,12 +5,10 @@ Bricks[] brickArray = new Bricks[55];
 Platform[] paddle = new Platform[1];
 Ball[] playBall = new Ball[3]; // can hold multiple balls for powerups
 powerUpBig[] bigPower = new powerUpBig[1];
-powerUpMany[] manyPower = new powerUpMany[1];
-powerUpSlow[] slowPower = new powerUpSlow[1];
 import java.util.*;
 import java.io.*;
 ArrayDeque<Integer> scores = new ArrayDeque<Integer>();
-int lives = 10;
+int lives = 3;
 int score = 0;
 boolean spawn = false;
 boolean gameStart = false;
@@ -21,7 +19,7 @@ void setup() {
   playBall[0] = new Ball();
   paddle[0] = new Platform(300, 780, 200, 10);
   createBricks();
-  //biglist[0] = new powerUpBig();
+  bigPower[0] = new powerUpBig();
   try{
   Scanner scanner = new Scanner(new File(dataPath("scores.csv")));
   while(scanner.hasNext()){
@@ -83,11 +81,20 @@ void createBricks(){
   int x = 0;
   for (int i = 50; i < 760; i += 70) {
     for (int j = 100; j < 510; j += 100) {
-      brickArray[x] = new Bricks(i, j, 40, 20, 3);
+      brickArray[x] = new Bricks(i, j, 40, 20, 1);
       x += 1;
     }
   }
 }
+
+void contactPowerUp(){
+  if (playBall[0].xPos < bigPower[0].rightX && playBall[0].xPos > bigPower[0].leftX && playBall[0].yPos > bigPower[0].topY && playBall[0].yPos < bigPower[0].botY){ //if ball and powerup make contact
+    spawn = false;
+    playBall[0].rad = 40;
+  }
+}
+
+
 
 void contactBrick(){
   for (Bricks b : brickArray){
@@ -171,15 +178,17 @@ void draw(){
       paddle[0].movePlatform();
       
       playBall[0].move();
-      if (int(random(1000)) == 1){ //powerUp spawn rate
+      if (int(random(100)) == 1){ //powerUp spawn rate
         spawn = true;
       }
       if (spawn){
-        //bigPower[0].spawnPowerup();
+        bigPower[0].spawnPowerup();
       }
       contactBrick();
       contactPlatform();
-      if (playBall[0].yPos > 1500){
+      contactPowerUp();
+     // playBall[0].rad = 40;
+      if (playBall[0].yPos > 1500){ //respawn delay
         lives -= 1;
       }
       playBall[0].respawn();
