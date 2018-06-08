@@ -1,3 +1,15 @@
+//Welcome to Brick Breaker!
+//Team GoodProjects
+
+//INSTRUCTIONS
+
+//Press the run button
+//Click anywhere to start the game 
+//Move the paddle left and right with your mouse to hit the ball 
+//If the ball falls to the bottom, you lose a life and a new ball will be automatically generated 
+//Win by destroying all bricks 
+
+
 Bricks[] brickArray = new Bricks[55];
 Platform[] paddle = new Platform[1];
 Ball[] playBall = new Ball[3]; // can hold multiple balls for powerups
@@ -9,8 +21,6 @@ int lives = 100;
 int score = 0;
 boolean spawn = false;
 boolean gameStart = false;
-
-
 
 void setup() {
   size(840, 800);

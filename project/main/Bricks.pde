@@ -24,9 +24,9 @@ int score = 0;
      widt = w;
      hite = h;
      //brick will be random colors
-     r = random(100, 300);
-     g = random(100, 300);
-     b = random(100, 300);
+     r = random(100, 255);
+     g = random(100, 255);
+     b = random(100, 255);
      hp = new Stack<Integer>();
      hp.push(1);
   }
