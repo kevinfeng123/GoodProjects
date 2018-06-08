@@ -17,14 +17,17 @@ int score = 0;
   Bricks(){
     hp.push(1);
   }
-  Bricks(int x,int y,int w,int h){
+  Bricks(int x,int y,int w,int h, int l){
      rect(x,y,w,h);
      xPos = x;
      yPos = y;
      widt = w;
      hite = h;
      hp = new Stack<Integer>();
-     hp.push(1);
+     while (l > 0){ //push lives into brick
+       hp.push(l);
+       l -= 1;
+     } 
   }
   
   //int getX(){

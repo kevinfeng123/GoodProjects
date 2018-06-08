@@ -5,7 +5,7 @@ powerUpBig[] biglist = new powerUpBig[5];
 import java.util.*;
 import java.io.*;
 ArrayDeque<Integer> scores = new ArrayDeque<Integer>();
-int lives = 3;
+int lives = 10;
 int score = 0;
 boolean spawn = false;
 boolean gameStart = false;
@@ -74,7 +74,7 @@ void createBricks(){
   int x = 0;
   for (int i = 50; i < 760; i += 70) {
     for (int j = 100; j < 510; j += 100) {
-      brickArray[x] = new Bricks(i, j, 40, 20);
+      brickArray[x] = new Bricks(i, j, 40, 20, 3);
       x += 1;
     }
   }
