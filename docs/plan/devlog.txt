@@ -79,3 +79,11 @@ Kevin Feng :: Finished hit detection, still could be improved.
 Kevin Feng :: Improved hit detection and wrote a finished basic brick breaker. Added scoring.
 Added a start screen based on mouseclick and a game over screen when player runs out of lives.
 ==============================================================
+2018-06-07
+--------------------------------------------------------------
+Kenny Lin :: Added game overlay for remaining lives, score, and different design schemes. 
+==============================================================
+2018-06-07
+--------------------------------------------------------------
+Kenny Lin :: Added end functions for victory conditions. 
+==============================================================
