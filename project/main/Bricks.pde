@@ -16,6 +16,7 @@ int score = 0;
 
   Bricks(){
     hp.push(1);
+    
   }
   Bricks(int x,int y,int w,int h, int l){
      rect(x,y,w,h);
@@ -28,11 +29,10 @@ int score = 0;
      g = random(100, 255);
      b = random(100, 255);
      hp = new Stack<Integer>();
-     while (l > 0){ //push lives into brick
-       hp.push(l);
-       l -= 1;
+     for (int i = 0 ; i < l ; i++)
+       { hp.push(1);}
      } 
-  }
+  
   
   //int getX(){
     //return xPos;
@@ -46,6 +46,7 @@ int score = 0;
     leftX = xPos - widt;
     topY = yPos + hite;
     bottomY = yPos - hite;
+    System.out.println(hp.size());
     }
   }
   
