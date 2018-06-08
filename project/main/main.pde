@@ -19,11 +19,7 @@ powerUpBig[] slowPower = new powerUpSlow[1];
 import java.util.*;
 import java.io.*;
 ArrayDeque<Integer> scores = new ArrayDeque<Integer>();
-<<<<<<< HEAD
-int lives = 100;
-=======
 int lives = 10;
->>>>>>> 61186c9851c19fc15b9e3ca1728564f101b7585c
 int score = 0;
 boolean spawn = false;
 boolean gameStart = false;
