@@ -16,9 +16,6 @@ int score = 0;
 
   Bricks(){
     hp.push(1);
-    r = random(128, 255);
-    g = random(128, 255);
-    b = random(128, 255);
   }
   Bricks(int x,int y,int w,int h){
      rect(x,y,w,h);
@@ -26,6 +23,10 @@ int score = 0;
      yPos = y;
      widt = w;
      hite = h;
+     //brick will be random colors
+     r = random(100, 300);
+     g = random(100, 300);
+     b = random(100, 300);
      hp = new Stack<Integer>();
      hp.push(1);
   }
@@ -36,8 +37,8 @@ int score = 0;
   void createBrick(){
     if (hp.size() > 0){
     
-    rect(xPos, yPos, widt, hite);
     fill(r, g, b);
+    rect(xPos, yPos, widt, hite);
     rightX = xPos + widt;
     leftX = xPos - widt;
     topY = yPos + hite;

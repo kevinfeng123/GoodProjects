@@ -140,9 +140,11 @@ void draw(){
     if (lives > 0 && gameStart){
       background(0);
       textSize(30);
-      text("score: ", 20, 35);
+      text("score: ", 20, 35); //number of bricks hit by player
       text(score, 150, 35);
-      text("avg score: ", 20, 70);
+      text("avg score: ", 20, 70); //average number of bricks hit by player
+      text("lives", 20, 750); //text for lives remaining 
+      text(lives, 150, 750); //displayed on bottom left of screen
       int sum = 0;
       for (Integer i : scores){
         sum += i;
