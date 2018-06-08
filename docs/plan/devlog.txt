@@ -26,28 +26,20 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
->
+
+--The past 5 average no longer works
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
+
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We changed ___ to ___ bc...
-<etc>
-<etc>
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<tales of wisdom gained...>
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
+Adding features comes with breaking other features
 
  ______   ______   __   __   __       ______   _______     
 /_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
@@ -86,9 +78,11 @@ Added a start screen based on mouseclick and a game over screen when player runs
 ==============================================================
 2018-06-07
 --------------------------------------------------------------
+Kevin Feng :: Implemented stack into brick HP, implemented a queue for the previous scores as well as an average of the past 5 scores
 Kenny Lin :: Added game overlay for remaining lives, score, and different color scheme. 
 ==============================================================
-2018-06-07
+2018-06-08
 --------------------------------------------------------------
+Kevin Feng :: Added powerup
 Kenny Lin :: Added end functions for victory conditions. 
 ==============================================================

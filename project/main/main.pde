@@ -11,6 +11,7 @@ ArrayDeque<Integer> scores = new ArrayDeque<Integer>();
 int lives = 3;
 int score = 0;
 boolean spawn = false;
+boolean spawnAgain = true;
 boolean gameStart = false;
 
 void setup() {
@@ -90,7 +91,8 @@ void createBricks(){
 void contactPowerUp(){
   if (playBall[0].xPos < bigPower[0].rightX && playBall[0].xPos > bigPower[0].leftX && playBall[0].yPos > bigPower[0].topY && playBall[0].yPos < bigPower[0].botY){ //if ball and powerup make contact
     spawn = false;
-    playBall[0].rad = 40;
+    spawnAgain = false;
+    playBall[0].rad = 60;
   }
 }
 
@@ -178,9 +180,10 @@ void draw(){
       paddle[0].movePlatform();
       
       playBall[0].move();
+      if (spawnAgain){
       if (int(random(100)) == 1){ //powerUp spawn rate
         spawn = true;
-      }
+      }}
       if (spawn){
         bigPower[0].spawnPowerup();
       }
