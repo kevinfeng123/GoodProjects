@@ -1,7 +1,9 @@
 Bricks[] brickArray = new Bricks[55];
 Platform[] paddle = new Platform[1];
 Ball[] playBall = new Ball[3]; // can hold multiple balls for powerups
-powerUpBig[] biglist = new powerUpBig[5];
+powerUpBig[] bigPower = new powerUpBig[1];
+powerUpBig[] manyPower = new powerUpMany[1];
+powerUpBig[] slowPower = new powerUpSlow[1];
 import java.util.*;
 import java.io.*;
 ArrayDeque<Integer> scores = new ArrayDeque<Integer>();
@@ -163,7 +165,7 @@ void draw(){
         spawn = true;
       }
       if (spawn){
-        biglist[0].spawnPowerup();
+        bigPower[0].spawnPowerup();
       }
       contactBrick();
       contactPlatform();
