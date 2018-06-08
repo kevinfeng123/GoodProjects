@@ -86,7 +86,7 @@ Added a start screen based on mouseclick and a game over screen when player runs
 ==============================================================
 2018-06-07
 --------------------------------------------------------------
-Kenny Lin :: Added game overlay for remaining lives, score, and different design schemes. 
+Kenny Lin :: Added game overlay for remaining lives, score, and different color scheme. 
 ==============================================================
 2018-06-07
 --------------------------------------------------------------
