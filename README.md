@@ -16,15 +16,15 @@ The player has to move the paddle tp hit the blocks, break them. The ball stays 
 - Different balls to shoot
 
 ## Launch Instructions:
-1 Clone our repo.
-2. Open GoodProjects/project/main/main.pde
-3. Press the run icon to start the game
+1 Clone our repo.  
+2. Open GoodProjects/project/main/main.pde  
+3. Press the run icon to start the game  
 
 ## How To Play:
- 1. Click anywhere to start the game
- 2. Move the paddle left and right with your mouse to hit the ball 
- 3. If the ball falls to the bottom, you lose a life and a new ball will be automatically generated
- 4. Win by destroying all bricks
- 
+ 1. Click anywhere to start the game  
+ 2. Move the paddle left and right with your mouse to hit the ball   
+ 3. If the ball falls to the bottom, you lose a life and a new ball will be automatically generated  
+ 4. Win by destroying all bricks  
+   
 
 
